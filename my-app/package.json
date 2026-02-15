@@ -1,0 +1,36 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "build:mobile": "cp -r src/app/api src/app/_api_backup && rm -rf src/app/api && rm -rf .next && CAPACITOR_BUILD=1 NEXT_PUBLIC_API_URL=https://YOUR_VERCEL_URL next build; cp -r src/app/_api_backup src/app/api && rm -rf src/app/_api_backup",
+    "cap:sync": "npx cap sync",
+    "cap:open": "npx cap open android"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.74.0",
+    "@capacitor/android": "^8.1.0",
+    "@capacitor/cli": "^8.0.2",
+    "@capacitor/core": "^8.0.2",
+    "@google/genai": "^1.40.0",
+    "@supabase/supabase-js": "^2.95.3",
+    "groq-sdk": "^0.37.0",
+    "next": "16.1.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
